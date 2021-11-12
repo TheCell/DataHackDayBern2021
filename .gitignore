@@ -18,6 +18,7 @@
 
 # Generated files
 .idea/**/contentModel.xml
+.ipynb_checkpoints
 
 # Sensitive or high-churn files
 .idea/**/dataSources/
@@ -567,5 +568,7 @@ FodyWeavers.xsd
 /Data_Private/**
 /Data_Private/raw/**
 /Data_Private/prepared/**
+/Data_Private/generated/**
 !Data_Private/raw/.keep
 !Data_Private/prepared/.keep
+!Data_Private/generated/.keep
