@@ -451,6 +451,57 @@
   </info>
   <notepads>
   </notepads>
+  <connection>
+    <name>postgres</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>postgres</database>
+    <port>55432</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc86aa7f2e4bb16bd64d980aac9</password>
+    <servername />
+    <data_tablespace />
+    <index_tablespace />
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>55432</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>Dummy (do nothing)</from>
@@ -458,13 +509,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Gemeinde Inzidenzen</from>
-      <to>Stream lookup</to>
+      <from>Dummy (do nothing) 2</from>
+      <to>Gemeinde Inzidenzen</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Gemeinde Portrait</from>
-      <to>Stream lookup</to>
+      <to>SQL File Output</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1124,7 +1175,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
+      <xloc>528</xloc>
       <yloc>128</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1154,8 +1205,8 @@
     </GUI>
   </step>
   <step>
-    <name>Stream lookup</name>
-    <type>StreamLookup</type>
+    <name>Dummy (do nothing) 2</name>
+    <type>Dummy</type>
     <description />
     <distribute>Y</distribute>
     <custom_distribution />
@@ -1164,23 +1215,6 @@
       <method>none</method>
       <schema_name />
     </partitioning>
-    <from>Gemeinde Portrait</from>
-    <input_sorted>N</input_sorted>
-    <preserve_memory>Y</preserve_memory>
-    <sorted_list>N</sorted_list>
-    <integer_pair>N</integer_pair>
-    <lookup>
-      <key>
-        <name>Gemeinde</name>
-        <field>gemeinde_name</field>
-      </key>
-      <value>
-        <name>altersverteilung_0_19</name>
-        <rename>altersverteilung_0_19</rename>
-        <default />
-        <type>Number</type>
-      </value>
-    </lookup>
     <cluster_schema />
     <remotesteps>
       <input>
@@ -1189,8 +1223,53 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>544</xloc>
+      <xloc>112</xloc>
       <yloc>128</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SQL File Output</name>
+    <type>SQLFileOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>postgres</connection>
+    <schema />
+    <table>gemeinde_portrait</table>
+    <truncate>N</truncate>
+    <create>N</create>
+    <encoding />
+    <dateformat />
+    <addtoresult>N</addtoresult>
+    <startnewline>N</startnewline>
+    <file>
+      <name>${Data_Public_Folder}/generated/V2__gemeinde_portrait_inserts</name>
+      <extention>sql</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <splitevery>0</splitevery>
+      <create_parent_folder>N</create_parent_folder>
+      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
+    </file>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>768</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
