@@ -1,6 +1,6 @@
 create table gemeinde_portrait(
                                   bfs_nummer	int4 NOT NULL,
-                                  gemeinde_name	varhcar(255),
+                                  gemeinde_name	varchar(255),
                                   bevoelkerung_einwohner	decimal(10,2),
                                   bevoelkerung_veraenderung	decimal(10,2),
                                   bevoelkerung_bevoelkerungsdichte	decimal(10,2),
