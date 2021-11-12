@@ -564,7 +564,7 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,intellij+all,windows,macos,linux
 
-
-
-Data_Private/
-!/Data_Private/.keep
+/Data_Private/raw/**
+/Data_Private/prepared/**
+!Data_Private/raw/.keep
+!Data_Private/prepared/.keep
