@@ -1,0 +1,162 @@
+{
+  "id": 4,
+  "gridPos": {
+    "h": 8,
+    "w": 12,
+    "x": 0,
+    "y": 0
+  },
+  "type": "timeseries",
+  "title": "Ereignisse über Zeit",
+  "interval": "7d",
+  "fieldConfig": {
+    "defaults": {
+      "custom": {
+        "drawStyle": "line",
+        "lineInterpolation": "smooth",
+        "barAlignment": 0,
+        "lineWidth": 2,
+        "fillOpacity": 0,
+        "gradientMode": "none",
+        "spanNulls": false,
+        "showPoints": "auto",
+        "pointSize": 5,
+        "stacking": {
+          "mode": "none",
+          "group": "A"
+        },
+        "axisPlacement": "auto",
+        "axisLabel": "",
+        "scaleDistribution": {
+          "type": "linear"
+        },
+        "hideFrom": {
+          "tooltip": false,
+          "viz": false,
+          "legend": false
+        },
+        "thresholdsStyle": {
+          "mode": "off"
+        }
+      },
+      "color": {
+        "mode": "palette-classic"
+      },
+      "thresholds": {
+        "mode": "absolute",
+        "steps": [
+          {
+            "color": "green",
+            "value": null
+          },
+          {
+            "color": "red",
+            "value": 80
+          },
+          {
+            "color": "#6ED0E0",
+            "value": 15000
+          }
+        ]
+      },
+      "mappings": []
+    },
+    "overrides": []
+  },
+  "options": {
+    "tooltip": {
+      "mode": "single"
+    },
+    "legend": {
+      "displayMode": "list",
+      "placement": "bottom",
+      "calcs": []
+    }
+  },
+  "targets": [
+    {
+      "format": "time_series",
+      "group": [],
+      "hide": false,
+      "metricColumn": "none",
+      "rawQuery": true,
+      "rawSql": "SELECT\n  $__timeGroupAlias(erstimpfung,$__interval),\n  count(erstimpfung) AS \"erst\"\nFROM gemeinde_impfungen\nWHERE\n  $__timeFilter(erstimpfung)\n  AND vollstaendiger_impfschutz = 'Y'\nGROUP BY time\nORDER BY 1",
+      "refId": "A",
+      "select": [
+        [
+          {
+            "params": [
+              "wohngemeinde"
+            ],
+            "type": "column"
+          }
+        ]
+      ],
+      "table": "gemeinde_impfungen",
+      "timeColumn": "erstimpfung",
+      "timeColumnType": "date",
+      "where": [
+        {
+          "name": "$__timeFilter",
+          "params": [],
+          "type": "macro"
+        }
+      ]
+    },
+    {
+      "format": "time_series",
+      "group": [],
+      "hide": false,
+      "metricColumn": "none",
+      "rawQuery": true,
+      "rawSql": "SELECT\n  $__timeGroupAlias(zweitimpfung,$__interval),\n  count(zweitimpfung) AS \"zweit\"\nFROM gemeinde_impfungen\nWHERE\n  $__timeFilter(zweitimpfung) \n  AND vollstaendiger_impfschutz = 'Y'\nGROUP BY time\nORDER BY 1",
+      "refId": "B",
+      "select": [
+        [
+          {
+            "params": [
+              "value"
+            ],
+            "type": "column"
+          }
+        ]
+      ],
+      "timeColumn": "time",
+      "where": [
+        {
+          "name": "$__timeFilter",
+          "params": [],
+          "type": "macro"
+        }
+      ]
+    },
+    {
+      "format": "time_series",
+      "group": [],
+      "hide": false,
+      "metricColumn": "none",
+      "rawQuery": true,
+      "rawSql": "SELECT\n  $__timeGroupAlias(registration,$__interval),\n  count(registration) AS \"registration\"\nFROM gemeinde_impfungen\nWHERE\n  $__timeFilter(registration)\n  AND vollstaendiger_impfschutz = 'Y'\nGROUP BY time\nORDER BY 1",
+      "refId": "C",
+      "select": [
+        [
+          {
+            "params": [
+              "value"
+            ],
+            "type": "column"
+          }
+        ]
+      ],
+      "timeColumn": "time",
+      "where": [
+        {
+          "name": "$__timeFilter",
+          "params": [],
+          "type": "macro"
+        }
+      ]
+    }
+  ],
+  "datasource": null
+}
