@@ -1,0 +1,2170 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "id": 1,
+  "iteration": 1636794768446,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "panels": [
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "rechts",
+                      "links"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 13,
+            "w": 18,
+            "x": 0,
+            "y": 1
+          },
+          "id": 2,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"rechts\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_svp + gp.wahl_rechtsparteien) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) < (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"links\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_sp + gp.wahl_gps) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) >= (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Inzidenz: Links vs Rechts",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 6,
+            "x": 18,
+            "y": 1
+          },
+          "id": 5,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "pieType": "pie",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "tooltip": {
+              "mode": "single"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  count(distinct gi.bfs_nummer) AS \"rechts\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_svp + gp.wahl_rechtsparteien) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) <  (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  count(distinct gi.bfs_nummer) AS \"links\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_sp + gp.wahl_gps) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) >= (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Anzahl \"Linke\" und \"Rechte\" Gemeinden",
+          "transformations": [],
+          "transparent": true,
+          "type": "piechart"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                }
+              },
+              "mappings": []
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 6,
+            "x": 18,
+            "y": 12
+          },
+          "id": 6,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "displayMode": "list",
+              "placement": "bottom"
+            },
+            "pieType": "pie",
+            "reduceOptions": {
+              "calcs": [
+                "lastNotNull"
+              ],
+              "fields": "",
+              "values": false
+            },
+            "tooltip": {
+              "mode": "single"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  sum(gp.bevoelkerung_einwohner) AS \"rechts\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_svp + gp.wahl_rechtsparteien) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) <  (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  sum(gp.bevoelkerung_einwohner) AS \"links\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND (gp.wahl_sp + gp.wahl_gps) > 30\n  AND (gp.wahl_sp + gp.wahl_gps) >= (gp.wahl_svp + gp.wahl_rechtsparteien)\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "title": "Anzahl Einwohner in \"Linken\" und \"Rechten\" Gemeinden",
+          "transformations": [],
+          "transparent": true,
+          "type": "piechart"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "unter",
+                      "uber"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 18,
+            "x": 0,
+            "y": 14
+          },
+          "id": 3,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"unter\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND gp.haushalt_haushaltsgroesse_pro_person < 2.4\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"uber\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND gp.haushalt_haushaltsgroesse_pro_person > 2.4\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Inzidenz: Haushaltsgrösse",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "unter",
+                      "uber"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 18,
+            "x": 0,
+            "y": 25
+          },
+          "id": 13,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"unter\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND gp.flaeche_siedlung < 12\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(datum,$__interval),\n  avg(gi.inzidenz) AS \"uber\"\nFROM gemeinde_inzidenzen gi, gemeinde_portrait gp\nWHERE\n  gi.bfs_nummer = gp.bfs_nummer\n  AND gp.flaeche_siedlung > 12\n  AND $__timeFilter(gi.datum)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Inzidenz: Siedlungsfläche",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Inzidenzen",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 10,
+      "panels": [
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 18,
+            "x": 0,
+            "y": 2
+          },
+          "id": 4,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(erstimpfung,$__interval),\n  count(erstimpfung) AS \"erst\"\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(erstimpfung)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(zweitimpfung,$__interval),\n  count(zweitimpfung) AS \"zweit\"\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(zweitimpfung)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(registration,$__interval),\n  count(registration) AS \"registration\"\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(registration)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "C",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Vacme: Anmeldungen, Erst und Zweit Impfungen",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 18,
+            "x": 0,
+            "y": 13
+          },
+          "id": 11,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(erstimpfung,$__interval),\n  erstimpfung_odi_typ as Angebot,\n  count(erstimpfung_odi_typ)\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(erstimpfung)\nGROUP BY erstimpfung, erstimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": true,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(zweitimpfung,$__interval),\n  count(erstimpfung_odi_typ) AS \"zweit\"\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(zweitimpfung)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Erst-Impfungen pro Angebot Typ",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 18,
+            "x": 0,
+            "y": 24
+          },
+          "id": 12,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(zweitimpfung,$__interval),\n  zweitimpfung_odi_typ as Angebot,\n  count(zweitimpfung_odi_typ)\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(zweitimpfung)\nGROUP BY zweitimpfung, zweitimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            },
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": true,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(zweitimpfung,$__interval),\n  count(erstimpfung_odi_typ) AS \"zweit\"\nFROM gemeinde_impfungen\nWHERE\n  1=1\n  AND $__timeFilter(zweitimpfung)\nGROUP BY time\nORDER BY 1,2",
+              "refId": "B",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Zweit-Impfungen pro Angebot Typ",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Impfquote",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 2
+      },
+      "id": 16,
+      "panels": [
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 11,
+            "x": 0,
+            "y": 3
+          },
+          "id": 14,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(gi.erstimpfung,$__interval),\n  gi.erstimpfung_odi_typ as Angebot,\n  count(gi.erstimpfung_odi_typ)\nFROM gemeinde_impfungen gi, gemeinde_portrait gp\nWHERE\n  gp.gemeinde_name = gi.wohngemeinde\n  AND $__timeFilter(erstimpfung)\n  AND gp.flaeche_siedlung < $siedlungsgebiet\nGROUP BY gi.erstimpfung, gi.erstimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Erst-Impfungen pro Angebot Typ in Gemeinden mit < $siedlungsgebiet km^2 Siedlungsgebiet",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 11,
+            "x": 11,
+            "y": 3
+          },
+          "id": 17,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(gi.erstimpfung,$__interval),\n  gi.erstimpfung_odi_typ as Angebot,\n  count(gi.erstimpfung_odi_typ)\nFROM gemeinde_impfungen gi, gemeinde_portrait gp\nWHERE\n  gp.gemeinde_name = gi.wohngemeinde\n  AND $__timeFilter(erstimpfung)\n  AND gp.flaeche_siedlung > $siedlungsgebiet\nGROUP BY gi.erstimpfung, gi.erstimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Erst-Impfungen pro Angebot Typ in Gemeinden mit > $siedlungsgebiet km^2 Siedlungsgebiet",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Variable Siedlungsgebiet",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 3
+      },
+      "id": 20,
+      "panels": [
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "count Alters- und Pflegeheim",
+                      "count Apotheke",
+                      "count Arztpraxis",
+                      "count Impfpraxis",
+                      "count Mobiles Impfteam",
+                      "count Spital"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 11,
+            "x": 0,
+            "y": 4
+          },
+          "id": 18,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(gi.erstimpfung,$__interval),\n  gi.erstimpfung_odi_typ as Angebot,\n  count(gi.erstimpfung_odi_typ)\nFROM gemeinde_impfungen gi, gemeinde_portrait gp\nWHERE\n  gp.gemeinde_name = gi.erstimpfung_gemeinde\n  AND $__timeFilter(erstimpfung)\n  AND gp.bevoelkerung_bevoelkerungsdichte < $bev_dichte\nGROUP BY gi.erstimpfung, gi.erstimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Erst-Impfungen pro Angebot Typ in Gemeinden mit < $bev_dichte Bevölkerungsdichte",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        },
+        {
+          "datasource": "PostgreSQL",
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 0,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "lineInterpolation": "smooth",
+                "lineStyle": {
+                  "fill": "solid"
+                },
+                "lineWidth": 1,
+                "pointSize": 1,
+                "scaleDistribution": {
+                  "log": 10,
+                  "type": "log"
+                },
+                "showPoints": "auto",
+                "spanNulls": false,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  }
+                ]
+              }
+            },
+            "overrides": [
+              {
+                "__systemRef": "hideSeriesFrom",
+                "matcher": {
+                  "id": "byNames",
+                  "options": {
+                    "mode": "exclude",
+                    "names": [
+                      "count Alters- und Pflegeheim",
+                      "count Andere",
+                      "count Apotheke",
+                      "count Arztpraxis",
+                      "count Betriebe",
+                      "count Impfpraxis",
+                      "count Mobiles Impfteam",
+                      "count Spital",
+                      "count Test"
+                    ],
+                    "prefix": "All except:",
+                    "readOnly": true
+                  }
+                },
+                "properties": [
+                  {
+                    "id": "custom.hideFrom",
+                    "value": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": true
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 11,
+            "x": 11,
+            "y": 4
+          },
+          "id": 21,
+          "interval": "7d",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "table",
+              "placement": "bottom"
+            },
+            "tooltip": {
+              "mode": "multi"
+            }
+          },
+          "targets": [
+            {
+              "format": "time_series",
+              "group": [],
+              "hide": false,
+              "metricColumn": "gemeinde",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  $__timeGroupAlias(gi.erstimpfung,$__interval),\n  gi.erstimpfung_odi_typ as Angebot,\n  count(gi.erstimpfung_odi_typ)\nFROM gemeinde_impfungen gi, gemeinde_portrait gp\nWHERE\n  gp.gemeinde_name = gi.erstimpfung_gemeinde\n  AND $__timeFilter(erstimpfung)\n  AND gp.bevoelkerung_bevoelkerungsdichte > $bev_dichte\nGROUP BY gi.erstimpfung, gi.erstimpfung_odi_typ\nORDER BY 1,2",
+              "refId": "A",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "inzidenz"
+                    ],
+                    "type": "column"
+                  },
+                  {
+                    "params": [
+                      "avg"
+                    ],
+                    "type": "aggregate"
+                  },
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "alias"
+                  }
+                ]
+              ],
+              "table": "gemeinde_inzidenzen",
+              "timeColumn": "datum",
+              "timeColumnType": "date",
+              "where": [
+                {
+                  "name": "$__timeFilter",
+                  "params": [],
+                  "type": "macro"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "title": "Erst-Impfungen pro Angebot Typ in Gemeinden mit > $bev_dichte Bevölkerungsdichte",
+          "transformations": [],
+          "transparent": true,
+          "type": "timeseries"
+        }
+      ],
+      "title": "Variable Bevoelkerungsdichte",
+      "type": "row"
+    }
+  ],
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "10",
+          "value": "10"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "siedlungsgebiet",
+        "multi": false,
+        "name": "siedlungsgebiet",
+        "options": [
+          {
+            "selected": false,
+            "text": "1",
+            "value": "1"
+          },
+          {
+            "selected": false,
+            "text": "5",
+            "value": "5"
+          },
+          {
+            "selected": true,
+            "text": "10",
+            "value": "10"
+          },
+          {
+            "selected": false,
+            "text": "12",
+            "value": "12"
+          },
+          {
+            "selected": false,
+            "text": "15",
+            "value": "15"
+          },
+          {
+            "selected": false,
+            "text": "20",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "30",
+            "value": "30"
+          },
+          {
+            "selected": false,
+            "text": "40",
+            "value": "40"
+          },
+          {
+            "selected": false,
+            "text": "50",
+            "value": "50"
+          }
+        ],
+        "query": "1, 5, 10, 12, 15, 20, 30, 40, 50",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "100",
+          "value": "100"
+        },
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "bev_dichte",
+        "multi": false,
+        "name": "bev_dichte",
+        "options": [
+          {
+            "selected": false,
+            "text": "5",
+            "value": "5"
+          },
+          {
+            "selected": false,
+            "text": "20",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "30",
+            "value": "30"
+          },
+          {
+            "selected": false,
+            "text": "50",
+            "value": "50"
+          },
+          {
+            "selected": false,
+            "text": "70",
+            "value": "70"
+          },
+          {
+            "selected": true,
+            "text": "100",
+            "value": "100"
+          },
+          {
+            "selected": false,
+            "text": "130",
+            "value": "130"
+          },
+          {
+            "selected": false,
+            "text": "170",
+            "value": "170"
+          },
+          {
+            "selected": false,
+            "text": "200",
+            "value": "200"
+          },
+          {
+            "selected": false,
+            "text": "250",
+            "value": "250"
+          },
+          {
+            "selected": false,
+            "text": "300",
+            "value": "300"
+          },
+          {
+            "selected": false,
+            "text": "400",
+            "value": "400"
+          },
+          {
+            "selected": false,
+            "text": "500",
+            "value": "500"
+          },
+          {
+            "selected": false,
+            "text": "600",
+            "value": "600"
+          },
+          {
+            "selected": false,
+            "text": "800",
+            "value": "800"
+          },
+          {
+            "selected": false,
+            "text": "1000",
+            "value": "1000"
+          },
+          {
+            "selected": false,
+            "text": "2000",
+            "value": "2000"
+          },
+          {
+            "selected": false,
+            "text": "3000",
+            "value": "3000"
+          },
+          {
+            "selected": false,
+            "text": "4000",
+            "value": "4000"
+          }
+        ],
+        "query": "5, 20, 30, 50, 70, 100, 130, 170, 200, 250, 300, 400, 500, 600, 800, 1000, 2000, 3000, 4000 ",
+        "queryValue": "",
+        "skipUrlSync": false,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now/y",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Impfzeugs",
+  "uid": "f6xtyt5nz",
+  "version": 7
+}
