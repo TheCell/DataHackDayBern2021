@@ -563,6 +563,11 @@
       <to>Select values 4</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Select values 4</from>
+      <to>SQL File Output 2 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>Gemeinde Portrait</name>
@@ -1500,7 +1505,7 @@
     <encoding>UTF-8</encoding>
     <fields>
       <field>
-        <name>Registration</name>
+        <name>registration</name>
         <type>Date</type>
         <format>yyyy-MM-dd</format>
         <currency>SFr.</currency>
@@ -1511,7 +1516,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Geschlecht</name>
+        <name>geschlecht</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1522,7 +1527,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Vollstaendiger_Impfschutz</name>
+        <name>vollstaendiger_impfschutz</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1533,7 +1538,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Imfgruppe</name>
+        <name>imfgruppe</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1544,7 +1549,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Wohngemeinde</name>
+        <name>wohngemeinde</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1555,7 +1560,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Erstimpfung ODI Typ</name>
+        <name>erstimpfung_odi_typ</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1566,7 +1571,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Erstimpfung Gemeinde</name>
+        <name>erstimpfung_gemeinde</name>
         <type>String</type>
         <format />
         <currency>SFr.</currency>
@@ -1577,7 +1582,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Erstimpfung</name>
+        <name>erstimpfung</name>
         <type>Date</type>
         <format>dd.MM.yyyy</format>
         <currency />
@@ -1588,7 +1593,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Zweitimpfung ODI Typ</name>
+        <name>zweitimpfung_odi_typ</name>
         <type>String</type>
         <format />
         <currency />
@@ -1599,7 +1604,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Zweitimpfung Gemeinde</name>
+        <name>zweitimpfung_gemeinde</name>
         <type>String</type>
         <format />
         <currency />
@@ -1610,7 +1615,7 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Zweitimpfung</name>
+        <name>zweitimpfung</name>
         <type>Date</type>
         <format>dd.MM.yyyy</format>
         <currency />
@@ -1648,8 +1653,8 @@
     <fields>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>Erstimpfung</name>
-        <rename>Erstimpfung</rename>
+        <name>erstimpfung</name>
+        <rename>erstimpfung</rename>
         <type>Date</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1665,8 +1670,8 @@
         <storage_type />
       </meta>
       <meta>
-        <name>Zweitimpfung</name>
-        <rename>Zweitimpfung</rename>
+        <name>zweitimpfung</name>
+        <rename>zweitimpfung</rename>
         <type>Date</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1707,12 +1712,12 @@
       <schema_name />
     </partitioning>
     <formula>
-      <field_name>Vollstaendiger_Impfschutz</field_name>
-      <formula_string>IF([Vollstaendiger_Impfschutz]="WAHR";1;0)</formula_string>
+      <field_name>vollstaendiger_impfschutz</field_name>
+      <formula_string>IF([vollstaendiger_impfschutz]="WAHR";1;0)</formula_string>
       <value_type>None</value_type>
       <value_length>-1</value_length>
       <value_precision>-1</value_precision>
-      <replace_field>Vollstaendiger_Impfschutz</replace_field>
+      <replace_field>vollstaendiger_impfschutz</replace_field>
     </formula>
     <cluster_schema />
     <remotesteps>
@@ -1741,8 +1746,8 @@
     <fields>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>Vollstaendiger_Impfschutz</name>
-        <rename>Vollstaendiger_Impfschutz</rename>
+        <name>vollstaendiger_impfschutz</name>
+        <rename>vollstaendiger_impfschutz</rename>
         <type>Integer</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1785,8 +1790,8 @@
     <fields>
       <select_unspecified>N</select_unspecified>
       <meta>
-        <name>Vollstaendiger_Impfschutz</name>
-        <rename>Vollstaendiger_Impfschutz</rename>
+        <name>vollstaendiger_impfschutz</name>
+        <rename>vollstaendiger_impfschutz</rename>
         <type>Boolean</type>
         <length>-2</length>
         <precision>-2</precision>
@@ -1811,6 +1816,51 @@
     </remotesteps>
     <GUI>
       <xloc>992</xloc>
+      <yloc>32</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SQL File Output 2 2</name>
+    <type>SQLFileOutput</type>
+    <description />
+    <distribute>Y</distribute>
+    <custom_distribution />
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name />
+    </partitioning>
+    <connection>postgres</connection>
+    <schema />
+    <table>gemeinde_impfungen</table>
+    <truncate>N</truncate>
+    <create>N</create>
+    <encoding>UTF-8</encoding>
+    <dateformat>yyyy-MM-dd</dateformat>
+    <addtoresult>N</addtoresult>
+    <startnewline>Y</startnewline>
+    <file>
+      <name>${Data_Private_Folder}/generated/V6__gemeinde_impfungen_inserts</name>
+      <extention>sql</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <splitevery>0</splitevery>
+      <create_parent_folder>N</create_parent_folder>
+      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
+    </file>
+    <cluster_schema />
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1136</xloc>
       <yloc>32</yloc>
       <draw>Y</draw>
     </GUI>

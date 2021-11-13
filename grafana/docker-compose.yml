@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  grafana:
+    build: .
+    ports:
+      - 3000:3000
+    volumes:
+      - ./dist/:/tmp/grafana/plugins/bedag-swisstopo
+    environment:
+      #Erlaubt das Laden von nicht Signierten Plugins
+      - GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=marcusolsson-csv-datasource,map-select-panel,bedag-swisstopo
+      #- GF_plugin.marcusolsson-csv-datasource_allow_local_mode=true
+      #Disable Login
+      #- GF_AUTH_DISABLE_LOGIN_FORM=true
+      #- GF_AUTH_ANONYMOUS_ENABLED=true
+    #command: /bin/sh -c "find /var/lib/grafana/plugins/map-select-panel/ -type f -exec chmod -x {} +"
