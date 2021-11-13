@@ -1,1344 +1,1078 @@
 {
   "min": 0,
   "max": 92611.7630261721,
-  "slider_value": 0,
   "slider_desc": "Erstimpfungsdistanz Total",
   "slider_long_desc": "Durchschnitt Distanz zur Erstimpfung pro Gemeinde",
-  "entries": [
-    {
-      "bfs_nummer": 498,
-      "value": 20144.203292696994,
-      "slider_value": "total"
-    },
-    {
-      "bfs_nummer": 928,
-      "value": 8262.9232139241127842,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 392,
-      "value": 15734.380407291615,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 581,
-      "value": 7279.4033607115203725,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 786,
-      "value": 30567.559000300080,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 748,
-      "value": 12947.513906588483,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 662,
-      "value": 19035.398956929484,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 446,
-      "value": 8120.9563934722657161,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 724,
-      "value": 17964.717712963397,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 869,
-      "value": 14013.693073856483,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 402,
-      "value": 12878.284334759845,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 303,
-      "value": 10400.593135309695,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 939,
-      "value": 7557.8251844376712470,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 409,
-      "value": 10849.860000094135,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 907,
-      "value": 14947.955833558266,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 885,
-      "value": 9634.3688813357803547,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 445,
-      "value": 22688.880111964284,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 533,
-      "value": 16135.107457332667,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 355,
-      "value": 9543.6944138415761997,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 953,
-      "value": 15279.213017432081,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 371,
-      "value": 11360.088467383009,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 745,
-      "value": 13267.654440054223,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 438,
-      "value": 10219.780415613483,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 901,
-      "value": 14885.942182538287,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 983,
-      "value": 15071.330231147531,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 491,
-      "value": 15724.813096801137,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 494,
-      "value": 22620.231820339855,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 543,
-      "value": 9060.3576638711666485,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 738,
-      "value": 11773.562999708818,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 754,
-      "value": 11232.526978773422,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 608,
-      "value": 15355.881232608894,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 444,
-      "value": 8418.0634687448679192,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 372,
-      "value": 12058.587333158642,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 390,
-      "value": 14777.369981861982,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 301,
-      "value": 8172.8643517850031336,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 943,
-      "value": 10143.878877908314,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 544,
-      "value": 7427.5506557505505610,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 345,
-      "value": 8361.6779073700113357,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 793,
-      "value": 27817.545707290939,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 497,
-      "value": 17190.399164699062,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 617,
-      "value": 13798.068218525244,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 540,
-      "value": 10422.498928858155,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 620,
-      "value": 14126.052430248757,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 326,
-      "value": 10600.566532019252,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 413,
-      "value": 13030.006082543158,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 934,
-      "value": 10073.527710670703,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 938,
-      "value": 12232.877948133955,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 538,
-      "value": 13021.097312773941,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 767,
-      "value": 11512.382058160512,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 448,
-      "value": 21302.647791514664,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 884,
-      "value": 13823.339705308078,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 354,
-      "value": 7235.8775756660454464,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 762,
-      "value": 16357.298552260887,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 603,
-      "value": 13945.021638956969,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 566,
-      "value": 12873.726039250147,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 333,
-      "value": 7417.2382040306201508,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 552,
-      "value": 14949.803129612818,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 351,
-      "value": 3535.9930960538854337,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 951,
-      "value": 13481.691580958199,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 304,
-      "value": 12765.482541867330,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 904,
-      "value": 16178.828256016605,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 619,
-      "value": 11322.481913499914,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 992,
-      "value": 14970.213756528090,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 632,
-      "value": 13571.357041165785,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 342,
-      "value": 5582.1842932058091630,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 594,
-      "value": 9674.7211066125308858,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 306,
-      "value": 7909.3739036205033685,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 979,
-      "value": 9006.2967906712419903,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 358,
-      "value": 8497.5450481265612796,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 908,
-      "value": 20715.330056953485,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 981,
-      "value": 15893.893040343683,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 311,
-      "value": 10033.368945024625,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 585,
-      "value": 13023.593561074700,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 713,
-      "value": 5957.7243286574206468,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 866,
-      "value": 13523.751742279294,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 945,
-      "value": 10061.044603681831,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 669,
-      "value": 26435.192493743172,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 563,
-      "value": 16722.850008627726,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 977,
-      "value": 10354.696493189530,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 332,
-      "value": 8215.7810711602072638,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 751,
-      "value": 14723.010828327353,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 852,
-      "value": 19615.503573470769,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 495,
-      "value": 20269.004425482590,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 989,
-      "value": 9639.8855371584589546,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 855,
-      "value": 17760.012673173400,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 905,
-      "value": 13847.663376064396,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 415,
-      "value": 9508.3833140037630237,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 424,
-      "value": 10587.852265031245,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 401,
-      "value": 12930.822672885887,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 331,
-      "value": 5193.3051595111096716,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 493,
-      "value": 16008.476954261739,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 381,
-      "value": 18443.944088956334,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 988,
-      "value": 13433.166629658023,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 605,
-      "value": 15769.986349915934,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 386,
-      "value": 11436.249105965727,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 877,
-      "value": 12477.332977885411,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 615,
-      "value": 15244.596628047849,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 567,
-      "value": 15922.476429559047,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 357,
-      "value": 13302.125840728934,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 902,
-      "value": 13935.534185085327,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 564,
-      "value": 15583.470177346864,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 700,
-      "value": 10925.537601277480,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 362,
-      "value": 4843.5365693976055348,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 763,
-      "value": 13507.961735054490,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 980,
-      "value": 11576.001226142078,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 341,
-      "value": 7026.6499842280089251,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 546,
-      "value": 7093.7212994417789398,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 785,
-      "value": 30591.304863777563,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 414,
-      "value": 13287.315816207242,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 954,
-      "value": 12174.012979650186,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 922,
-      "value": 9768.2933117770769778,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 627,
-      "value": 11033.604974741265,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 723,
-      "value": 11475.303022540242,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 565,
-      "value": 13253.981952665677,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 434,
-      "value": 16373.374955551635,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 706,
-      "value": 8289.8210748198780216,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 340,
-      "value": 6764.4006005690739936,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 363,
-      "value": 6258.1114030060515489,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 960,
-      "value": 13529.232512401342,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 502,
-      "value": 22147.882282471960,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 971,
-      "value": 17415.602924230456,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 338,
-      "value": 10559.501887799691,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 957,
-      "value": 8154.0319804966525113,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 903,
-      "value": 14237.417065021985,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 906,
-      "value": 21557.002911301893,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 985,
-      "value": 10542.885492107803,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 879,
-      "value": 10134.518347443022,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 329,
-      "value": 3186.6245461100176833,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 740,
-      "value": 21137.477816920601,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 593,
-      "value": 7528.9099399970884246,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 956,
-      "value": 11670.421710781526,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 883,
-      "value": 10514.271614866044,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 743,
-      "value": 12522.427206445415,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 794,
-      "value": 25546.507087456254,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 561,
-      "value": 9062.5878735172751661,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 321,
-      "value": 5835.2922167680312496,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 576,
-      "value": 29096.803017747399,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 623,
-      "value": 12753.182010618536,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 361,
-      "value": 4577.2489614788939836,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 344,
-      "value": 10848.944202190650,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 492,
-      "value": 23016.900543159688,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 731,
-      "value": 14025.999026185581,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 769,
-      "value": 12631.006049597998,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 742,
-      "value": 16518.007366187516,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 411,
-      "value": 11850.979869620053,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 861,
-      "value": 12362.443098882483,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 944,
-      "value": 7591.5369495042205960,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 551,
-      "value": 8392.6353499526811745,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 941,
-      "value": 8097.9509993605461248,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 496,
-      "value": 22772.021980222786,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 388,
-      "value": 20318.434925069588,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 612,
-      "value": 13596.518153756393,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 404,
-      "value": 7506.6458410083193422,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 880,
-      "value": 11681.737957913059,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 382,
-      "value": 11223.208937493013,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 407,
-      "value": 9418.4112180823205151,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 579,
-      "value": 9379.6228086928693750,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 927,
-      "value": 8419.1549189585821914,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 746,
-      "value": 13236.509706195391,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 584,
-      "value": 9470.5949776318794430,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 921,
-      "value": 9397.9573483432644541,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 613,
-      "value": 14880.595820271042,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 418,
-      "value": 7026.1474273746145175,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 703,
-      "value": 7241.5499947342487854,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 571,
-      "value": 8245.6628233651815609,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 352,
-      "value": 6527.1487025523570867,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 431,
-      "value": 6302.9128508013656943,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 670,
-      "value": 14419.852149752537,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 886,
-      "value": 10965.760744499359,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 611,
-      "value": 12750.238651746839,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 843,
-      "value": 40785.199823835078,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 929,
-      "value": 8619.4094047974710237,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 766,
-      "value": 16773.148782203909,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 616,
-      "value": 13377.321617757446,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 307,
-      "value": 9691.5373605750954710,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 870,
-      "value": 10260.687899517339,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 628,
-      "value": 15959.755247140430,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 622,
-      "value": 11890.265943599973,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 305,
-      "value": 11038.583838243681,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 435,
-      "value": 26517.439878510242,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 995,
-      "value": 16307.141396925937,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 952,
-      "value": 13218.434881756386,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 324,
-      "value": 7176.6470882705495059,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 744,
-      "value": 12233.457146266489,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 405,
-      "value": 12414.599388891558,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 958,
-      "value": 11006.691045842697,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 690,
-      "value": 11670.370875266007,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 383,
-      "value": 12644.958603353617,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 732,
-      "value": 14274.939962375540,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 863,
-      "value": 11832.735327695405,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 626,
-      "value": 13639.915292703131,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 973,
-      "value": 9384.9158208637340482,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 739,
-      "value": 13533.596015890933,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 663,
-      "value": 10539.710634333990,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 982,
-      "value": 10551.199731128032,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 323,
-      "value": 7455.6553878213265952,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 867,
-      "value": 10905.510123007933,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 433,
-      "value": 11525.957720059681,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": null,
-      "value": null,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 768,
-      "value": 12427.995481630802,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 791,
-      "value": 15650.074195084025,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 909,
-      "value": 18590.266080565762,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 610,
-      "value": 11522.137999261518,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 668,
-      "value": 15889.416979942422,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 761,
-      "value": 15651.803067531517,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 614,
-      "value": 12872.234717398560,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 755,
-      "value": 9436.5289903404106286,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 784,
-      "value": 43631.433883973491,
-      "slider_value":  "total"
-    },
-    {
-      "bfs_nummer": 942,
-      "value": 5560.4687151432461163,
-      "slider_value":  "total"
-    }
-  ]
+  "entries": {
+    "total": [
+      {
+        "bfs_nummer": 498,
+        "value": 20144.203292696994
+      },
+      {
+        "bfs_nummer": 928,
+        "value": 8262.9232139241127842
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 392,
+        "value": 15734.380407291615
+      },
+      {
+        "bfs_nummer": 581,
+        "value": 7279.4033607115203725
+      },
+      {
+        "bfs_nummer": 786,
+        "value": 30567.559000300080
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 748,
+        "value": 12947.513906588483
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 662,
+        "value": 19035.398956929484
+      },
+      {
+        "bfs_nummer": 446,
+        "value": 8120.9563934722657161
+      },
+      {
+        "bfs_nummer": 724,
+        "value": 17964.717712963397
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 869,
+        "value": 14013.693073856483
+      },
+      {
+        "bfs_nummer": 402,
+        "value": 12878.284334759845
+      },
+      {
+        "bfs_nummer": 303,
+        "value": 10400.593135309695
+      },
+      {
+        "bfs_nummer": 939,
+        "value": 7557.8251844376712470
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 409,
+        "value": 10849.860000094135
+      },
+      {
+        "bfs_nummer": 907,
+        "value": 14947.955833558266
+      },
+      {
+        "bfs_nummer": 885,
+        "value": 9634.3688813357803547
+      },
+      {
+        "bfs_nummer": 445,
+        "value": 22688.880111964284
+      },
+      {
+        "bfs_nummer": 533,
+        "value": 16135.107457332667
+      },
+      {
+        "bfs_nummer": 355,
+        "value": 9543.6944138415761997
+      },
+      {
+        "bfs_nummer": 953,
+        "value": 15279.213017432081
+      },
+      {
+        "bfs_nummer": 371,
+        "value": 11360.088467383009
+      },
+      {
+        "bfs_nummer": 745,
+        "value": 13267.654440054223
+      },
+      {
+        "bfs_nummer": 438,
+        "value": 10219.780415613483
+      },
+      {
+        "bfs_nummer": 901,
+        "value": 14885.942182538287
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 983,
+        "value": 15071.330231147531
+      },
+      {
+        "bfs_nummer": 491,
+        "value": 15724.813096801137
+      },
+      {
+        "bfs_nummer": 494,
+        "value": 22620.231820339855
+      },
+      {
+        "bfs_nummer": 543,
+        "value": 9060.3576638711666485
+      },
+      {
+        "bfs_nummer": 738,
+        "value": 11773.562999708818
+      },
+      {
+        "bfs_nummer": 754,
+        "value": 11232.526978773422
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 608,
+        "value": 15355.881232608894
+      },
+      {
+        "bfs_nummer": 444,
+        "value": 8418.0634687448679192
+      },
+      {
+        "bfs_nummer": 372,
+        "value": 12058.587333158642
+      },
+      {
+        "bfs_nummer": 390,
+        "value": 14777.369981861982
+      },
+      {
+        "bfs_nummer": 301,
+        "value": 8172.8643517850031336
+      },
+      {
+        "bfs_nummer": 943,
+        "value": 10143.878877908314
+      },
+      {
+        "bfs_nummer": 544,
+        "value": 7427.5506557505505610
+      },
+      {
+        "bfs_nummer": 345,
+        "value": 8361.6779073700113357
+      },
+      {
+        "bfs_nummer": 793,
+        "value": 27817.545707290939
+      },
+      {
+        "bfs_nummer": 497,
+        "value": 17190.399164699062
+      },
+      {
+        "bfs_nummer": 617,
+        "value": 13798.068218525244
+      },
+      {
+        "bfs_nummer": 540,
+        "value": 10422.498928858155
+      },
+      {
+        "bfs_nummer": 620,
+        "value": 14126.052430248757
+      },
+      {
+        "bfs_nummer": 326,
+        "value": 10600.566532019252
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 413,
+        "value": 13030.006082543158
+      },
+      {
+        "bfs_nummer": 934,
+        "value": 10073.527710670703
+      },
+      {
+        "bfs_nummer": 938,
+        "value": 12232.877948133955
+      },
+      {
+        "bfs_nummer": 538,
+        "value": 13021.097312773941
+      },
+      {
+        "bfs_nummer": 767,
+        "value": 11512.382058160512
+      },
+      {
+        "bfs_nummer": 448,
+        "value": 21302.647791514664
+      },
+      {
+        "bfs_nummer": 884,
+        "value": 13823.339705308078
+      },
+      {
+        "bfs_nummer": 354,
+        "value": 7235.8775756660454464
+      },
+      {
+        "bfs_nummer": 762,
+        "value": 16357.298552260887
+      },
+      {
+        "bfs_nummer": 603,
+        "value": 13945.021638956969
+      },
+      {
+        "bfs_nummer": 566,
+        "value": 12873.726039250147
+      },
+      {
+        "bfs_nummer": 333,
+        "value": 7417.2382040306201508
+      },
+      {
+        "bfs_nummer": 552,
+        "value": 14949.803129612818
+      },
+      {
+        "bfs_nummer": 351,
+        "value": 3535.9930960538854337
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 951,
+        "value": 13481.691580958199
+      },
+      {
+        "bfs_nummer": 304,
+        "value": 12765.482541867330
+      },
+      {
+        "bfs_nummer": 904,
+        "value": 16178.828256016605
+      },
+      {
+        "bfs_nummer": 619,
+        "value": 11322.481913499914
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 992,
+        "value": 14970.213756528090
+      },
+      {
+        "bfs_nummer": 632,
+        "value": 13571.357041165785
+      },
+      {
+        "bfs_nummer": 342,
+        "value": 5582.1842932058091630
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 594,
+        "value": 9674.7211066125308858
+      },
+      {
+        "bfs_nummer": 306,
+        "value": 7909.3739036205033685
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 979,
+        "value": 9006.2967906712419903
+      },
+      {
+        "bfs_nummer": 358,
+        "value": 8497.5450481265612796
+      },
+      {
+        "bfs_nummer": 908,
+        "value": 20715.330056953485
+      },
+      {
+        "bfs_nummer": 981,
+        "value": 15893.893040343683
+      },
+      {
+        "bfs_nummer": 311,
+        "value": 10033.368945024625
+      },
+      {
+        "bfs_nummer": 585,
+        "value": 13023.593561074700
+      },
+      {
+        "bfs_nummer": 713,
+        "value": 5957.7243286574206468
+      },
+      {
+        "bfs_nummer": 866,
+        "value": 13523.751742279294
+      },
+      {
+        "bfs_nummer": 945,
+        "value": 10061.044603681831
+      },
+      {
+        "bfs_nummer": 669,
+        "value": 26435.192493743172
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 563,
+        "value": 16722.850008627726
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 977,
+        "value": 10354.696493189530
+      },
+      {
+        "bfs_nummer": 332,
+        "value": 8215.7810711602072638
+      },
+      {
+        "bfs_nummer": 751,
+        "value": 14723.010828327353
+      },
+      {
+        "bfs_nummer": 852,
+        "value": 19615.503573470769
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 495,
+        "value": 20269.004425482590
+      },
+      {
+        "bfs_nummer": 989,
+        "value": 9639.8855371584589546
+      },
+      {
+        "bfs_nummer": 855,
+        "value": 17760.012673173400
+      },
+      {
+        "bfs_nummer": 905,
+        "value": 13847.663376064396
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 415,
+        "value": 9508.3833140037630237
+      },
+      {
+        "bfs_nummer": 424,
+        "value": 10587.852265031245
+      },
+      {
+        "bfs_nummer": 401,
+        "value": 12930.822672885887
+      },
+      {
+        "bfs_nummer": 331,
+        "value": 5193.3051595111096716
+      },
+      {
+        "bfs_nummer": 493,
+        "value": 16008.476954261739
+      },
+      {
+        "bfs_nummer": 381,
+        "value": 18443.944088956334
+      },
+      {
+        "bfs_nummer": 988,
+        "value": 13433.166629658023
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 605,
+        "value": 15769.986349915934
+      },
+      {
+        "bfs_nummer": 386,
+        "value": 11436.249105965727
+      },
+      {
+        "bfs_nummer": 877,
+        "value": 12477.332977885411
+      },
+      {
+        "bfs_nummer": 615,
+        "value": 15244.596628047849
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 567,
+        "value": 15922.476429559047
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 357,
+        "value": 13302.125840728934
+      },
+      {
+        "bfs_nummer": 902,
+        "value": 13935.534185085327
+      },
+      {
+        "bfs_nummer": 564,
+        "value": 15583.470177346864
+      },
+      {
+        "bfs_nummer": 700,
+        "value": 10925.537601277480
+      },
+      {
+        "bfs_nummer": 362,
+        "value": 4843.5365693976055348
+      },
+      {
+        "bfs_nummer": 763,
+        "value": 13507.961735054490
+      },
+      {
+        "bfs_nummer": 980,
+        "value": 11576.001226142078
+      },
+      {
+        "bfs_nummer": 341,
+        "value": 7026.6499842280089251
+      },
+      {
+        "bfs_nummer": 546,
+        "value": 7093.7212994417789398
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 785,
+        "value": 30591.304863777563
+      },
+      {
+        "bfs_nummer": 414,
+        "value": 13287.315816207242
+      },
+      {
+        "bfs_nummer": 954,
+        "value": 12174.012979650186
+      },
+      {
+        "bfs_nummer": 922,
+        "value": 9768.2933117770769778
+      },
+      {
+        "bfs_nummer": 627,
+        "value": 11033.604974741265
+      },
+      {
+        "bfs_nummer": 723,
+        "value": 11475.303022540242
+      },
+      {
+        "bfs_nummer": 565,
+        "value": 13253.981952665677
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 434,
+        "value": 16373.374955551635
+      },
+      {
+        "bfs_nummer": 706,
+        "value": 8289.8210748198780216
+      },
+      {
+        "bfs_nummer": 340,
+        "value": 6764.4006005690739936
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 363,
+        "value": 6258.1114030060515489
+      },
+      {
+        "bfs_nummer": 960,
+        "value": 13529.232512401342
+      },
+      {
+        "bfs_nummer": 502,
+        "value": 22147.882282471960
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 971,
+        "value": 17415.602924230456
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 338,
+        "value": 10559.501887799691
+      },
+      {
+        "bfs_nummer": 957,
+        "value": 8154.0319804966525113
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 903,
+        "value": 14237.417065021985
+      },
+      {
+        "bfs_nummer": 906,
+        "value": 21557.002911301893
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 985,
+        "value": 10542.885492107803
+      },
+      {
+        "bfs_nummer": 879,
+        "value": 10134.518347443022
+      },
+      {
+        "bfs_nummer": 329,
+        "value": 3186.6245461100176833
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 740,
+        "value": 21137.477816920601
+      },
+      {
+        "bfs_nummer": 593,
+        "value": 7528.9099399970884246
+      },
+      {
+        "bfs_nummer": 956,
+        "value": 11670.421710781526
+      },
+      {
+        "bfs_nummer": 883,
+        "value": 10514.271614866044
+      },
+      {
+        "bfs_nummer": 743,
+        "value": 12522.427206445415
+      },
+      {
+        "bfs_nummer": 794,
+        "value": 25546.507087456254
+      },
+      {
+        "bfs_nummer": 561,
+        "value": 9062.5878735172751661
+      },
+      {
+        "bfs_nummer": 321,
+        "value": 5835.2922167680312496
+      },
+      {
+        "bfs_nummer": 576,
+        "value": 29096.803017747399
+      },
+      {
+        "bfs_nummer": 623,
+        "value": 12753.182010618536
+      },
+      {
+        "bfs_nummer": 361,
+        "value": 4577.2489614788939836
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 344,
+        "value": 10848.944202190650
+      },
+      {
+        "bfs_nummer": 492,
+        "value": 23016.900543159688
+      },
+      {
+        "bfs_nummer": 731,
+        "value": 14025.999026185581
+      },
+      {
+        "bfs_nummer": 769,
+        "value": 12631.006049597998
+      },
+      {
+        "bfs_nummer": 742,
+        "value": 16518.007366187516
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 411,
+        "value": 11850.979869620053
+      },
+      {
+        "bfs_nummer": 861,
+        "value": 12362.443098882483
+      },
+      {
+        "bfs_nummer": 944,
+        "value": 7591.5369495042205960
+      },
+      {
+        "bfs_nummer": 551,
+        "value": 8392.6353499526811745
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 941,
+        "value": 8097.9509993605461248
+      },
+      {
+        "bfs_nummer": 496,
+        "value": 22772.021980222786
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 388,
+        "value": 20318.434925069588
+      },
+      {
+        "bfs_nummer": 612,
+        "value": 13596.518153756393
+      },
+      {
+        "bfs_nummer": 404,
+        "value": 7506.6458410083193422
+      },
+      {
+        "bfs_nummer": 880,
+        "value": 11681.737957913059
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 382,
+        "value": 11223.208937493013
+      },
+      {
+        "bfs_nummer": 407,
+        "value": 9418.4112180823205151
+      },
+      {
+        "bfs_nummer": 579,
+        "value": 9379.6228086928693750
+      },
+      {
+        "bfs_nummer": 927,
+        "value": 8419.1549189585821914
+      },
+      {
+        "bfs_nummer": 746,
+        "value": 13236.509706195391
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 584,
+        "value": 9470.5949776318794430
+      },
+      {
+        "bfs_nummer": 921,
+        "value": 9397.9573483432644541
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 613,
+        "value": 14880.595820271042
+      },
+      {
+        "bfs_nummer": 418,
+        "value": 7026.1474273746145175
+      },
+      {
+        "bfs_nummer": 703,
+        "value": 7241.5499947342487854
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 571,
+        "value": 8245.6628233651815609
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 352,
+        "value": 6527.1487025523570867
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 431,
+        "value": 6302.9128508013656943
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 670,
+        "value": 14419.852149752537
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 886,
+        "value": 10965.760744499359
+      },
+      {
+        "bfs_nummer": 611,
+        "value": 12750.238651746839
+      },
+      {
+        "bfs_nummer": 843,
+        "value": 40785.199823835078
+      },
+      {
+        "bfs_nummer": 929,
+        "value": 8619.4094047974710237
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 766,
+        "value": 16773.148782203909
+      },
+      {
+        "bfs_nummer": 616,
+        "value": 13377.321617757446
+      },
+      {
+        "bfs_nummer": 307,
+        "value": 9691.5373605750954710
+      },
+      {
+        "bfs_nummer": 870,
+        "value": 10260.687899517339
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 628,
+        "value": 15959.755247140430
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 622,
+        "value": 11890.265943599973
+      },
+      {
+        "bfs_nummer": 305,
+        "value": 11038.583838243681
+      },
+      {
+        "bfs_nummer": 435,
+        "value": 26517.439878510242
+      },
+      {
+        "bfs_nummer": 995,
+        "value": 16307.141396925937
+      },
+      {
+        "bfs_nummer": 952,
+        "value": 13218.434881756386
+      },
+      {
+        "bfs_nummer": 324,
+        "value": 7176.6470882705495059
+      },
+      {
+        "bfs_nummer": 744,
+        "value": 12233.457146266489
+      },
+      {
+        "bfs_nummer": 405,
+        "value": 12414.599388891558
+      },
+      {
+        "bfs_nummer": 958,
+        "value": 11006.691045842697
+      },
+      {
+        "bfs_nummer": 690,
+        "value": 11670.370875266007
+      },
+      {
+        "bfs_nummer": 383,
+        "value": 12644.958603353617
+      },
+      {
+        "bfs_nummer": 732,
+        "value": 14274.939962375540
+      },
+      {
+        "bfs_nummer": 863,
+        "value": 11832.735327695405
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 626,
+        "value": 13639.915292703131
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 973,
+        "value": 9384.9158208637340482
+      },
+      {
+        "bfs_nummer": 739,
+        "value": 13533.596015890933
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 663,
+        "value": 10539.710634333990
+      },
+      {
+        "bfs_nummer": 982,
+        "value": 10551.199731128032
+      },
+      {
+        "bfs_nummer": 323,
+        "value": 7455.6553878213265952
+      },
+      {
+        "bfs_nummer": 867,
+        "value": 10905.510123007933
+      },
+      {
+        "bfs_nummer": 433,
+        "value": 11525.957720059681
+      },
+      {
+        "bfs_nummer": null,
+        "value": null
+      },
+      {
+        "bfs_nummer": 768,
+        "value": 12427.995481630802
+      },
+      {
+        "bfs_nummer": 791,
+        "value": 15650.074195084025
+      },
+      {
+        "bfs_nummer": 909,
+        "value": 18590.266080565762
+      },
+      {
+        "bfs_nummer": 610,
+        "value": 11522.137999261518
+      },
+      {
+        "bfs_nummer": 668,
+        "value": 15889.416979942422
+      },
+      {
+        "bfs_nummer": 761,
+        "value": 15651.803067531517
+      },
+      {
+        "bfs_nummer": 614,
+        "value": 12872.234717398560
+      },
+      {
+        "bfs_nummer": 755,
+        "value": 9436.5289903404106286
+      },
+      {
+        "bfs_nummer": 784,
+        "value": 43631.433883973491
+      },
+      {
+        "bfs_nummer": 942,
+        "value": 5560.4687151432461163
+      }
+    ]
+  }
 }
