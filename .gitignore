@@ -572,3 +572,5 @@ FodyWeavers.xsd
 !Data_Private/raw/.keep
 !Data_Private/prepared/.keep
 !Data_Private/generated/.keep
+
+.parcel-cache
