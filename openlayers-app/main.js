@@ -4,6 +4,8 @@ import Vector from 'ol/source/vector';
 import GeoJSON from 'ol/format/GeoJSON';
 import Circle from 'ol/geom/Circle';
 import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+// import Point from 'ol';
 import Projection from 'ol/proj/Projection';
 import TileLayer from 'ol/layer/Tile';
 import VectorLayer from 'ol/layer/Vector';
@@ -16,7 +18,7 @@ import VectorImageLayer from 'ol/layer/VectorImage';
 import proj4 from 'proj4';
 import OSM from 'ol/source/OSM';
 import MousePosition from 'ol/control/MousePosition';
-import {Circle as CircleStyle, Fill, Stroke, Style} from 'ol/style';
+import {Circle as CircleStyle, Fill, Stroke, Style, Icon} from 'ol/style';
 import {ScaleLine, defaults as defaultControls} from 'ol/control';
 import {
   addCoordinateTransforms,
@@ -264,7 +266,8 @@ proj4.defs(
 );
 register(proj4);
 
-const swissCoord = transform([8.23, 46.86], 'EPSG:2056', 'EPSG:3857');
+const swissCoord = transform([8.23, 46.86], 'EPSG:3857', 'EPSG:21781');
+console.log(swissCoord);
 
 const projection = new Projection({
   code: 'EPSG:21781',
@@ -295,6 +298,30 @@ addCoordinateTransforms(
     ];
   }
 );
+
+const iconFeature = new Feature({
+  geometry: new Point(swissCoord)
+});
+
+
+const iconStyle = new Style({
+  image: new Icon({
+    anchor: [0.5, 46],
+    anchorXUnits: 'fraction',
+    anchorYUnits: 'pixels',
+    src: 'data/icon.png',
+  }),
+});
+
+iconFeature.setStyle(iconStyle)
+
+var pointsLayer = new VectorLayer({
+  source: new VectorSource({
+      features: [
+        iconFeature
+      ]
+  })
+});
 
 const extent = [420000, 30000, 900000, 350000];
 const layers = [
@@ -329,6 +356,7 @@ const layers = [
     source: vectorSource,
     style: styleFunction,
   }),
+  pointsLayer,
 ];
 
 
