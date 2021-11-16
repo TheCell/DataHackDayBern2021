@@ -15,3 +15,7 @@ independent_pretty = 'SP'
 Where independent_var is one of the values from column_list in cell 13.
 
 NB. Theoretically you can take any value from column_list and run a linear regression with it.
+
+## communities' progress vs. the canton's
+For this analysis, just run all the cells in communities.ipynb. Create a folder called "plots" first.
+You will receive an error message, but that is just because Jupyter can't open more than 20 figures by default. The images will still be created.
