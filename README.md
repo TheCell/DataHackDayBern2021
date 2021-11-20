@@ -22,7 +22,9 @@ You will receive an error message, but that is just because Jupyter can't open m
 
 
 ## Grafana Dashboards
+
 **Create 'clean' csv files from the raw data**
+
 Put all raw csv files in the folter `Data_Private/raw` and run the pythonscript.
 ```
 python datenaufbereitung.py
@@ -43,11 +45,13 @@ docker-compose up
 ```
 
 **Fill the Postgres DB with data**
+
 Find an example how to do it in `write_to_db_example.py`
 We used a magic "drag and drop" tool to insert the csv data into the database. 
 To duplicate that, you need to transform the datatype of some columns (especially dates) before writing it into the DB.
 
 **Create the Dashboards in Grafana**
+
 Load `Data_Public/grafana_dashboard_save.json` into grafana and adapt the queries to your database shema.
 Or just create a new one (is probably easier).
 
